@@ -16,6 +16,10 @@
           "index",
           "quickstart"
         ]
+      },
+      {
+        "group": "Guides",
+        "pages": ["index", "authentication"]
       }
     ],
     "global": {
