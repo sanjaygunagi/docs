@@ -10,7 +10,7 @@ policies, all defined in `src/auth.py`.
 
 ## Login policy
 
-- **Account lockout** — after **5** consecutive failed login attempts, the
+- **Account lockout** — after **3** consecutive failed login attempts, the
   account is locked and further attempts return `account_locked`.
 - **Minimum password length** — passwords must be at least **8** characters;
   shorter passwords are rejected with `password_too_short`.
