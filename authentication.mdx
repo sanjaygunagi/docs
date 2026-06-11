@@ -1,0 +1,27 @@
+---
+title: "Authentication"
+description: "How my-app authenticates users: lockout, password, and session rules."
+---
+
+## Overview
+
+my-app authenticates users with a username and password. Login enforces three
+policies, all defined in `src/auth.py`.
+
+## Login policy
+
+- **Account lockout** — after **5** consecutive failed login attempts, the
+  account is locked and further attempts return `account_locked`.
+- **Minimum password length** — passwords must be at least **8** characters;
+  shorter passwords are rejected with `password_too_short`.
+- **Session timeout** — a successful login starts a session that expires after
+  **30** minutes of inactivity.
+
+## Responses
+
+| Outcome | `reason` |
+|---|---|
+| Locked account | `account_locked` |
+| Password too short | `password_too_short` |
+| Wrong credentials | `invalid_credentials` |
+| Success | — (returns `session_timeout_minutes`) |
